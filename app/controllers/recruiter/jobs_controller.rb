@@ -2,6 +2,8 @@ class Recruiter::JobsController < ApplicationController
   before_action :set_job, only: [:show, :update, :destroy]
     def index
       @jobs = Job.all
+      .page(job_params[:page])
+      .per(job_params[:per_page])
     end
 
     def show
@@ -18,7 +20,7 @@ class Recruiter::JobsController < ApplicationController
     end
 
     def update
-      if @job.update(job_params_params)
+      if @job.update(job_params)
         render :update, status: :ok
       else
         render json: @job.errors, status: :unprocessable_entity
@@ -33,7 +35,7 @@ class Recruiter::JobsController < ApplicationController
     private
 
     def job_params
-      params.permit(:title, :description, :start_date, :end_date, :status, :skills, :recruiter_id)
+      params.permit(:title, :description, :start_date, :end_date, :status, :skills, :recruiter_id, :page, :per_page)
     end
 
     def set_job

@@ -4,6 +4,8 @@ class Public::SubmissionsController < ApplicationController
 
   def index
     @submissions = Submission.all
+    .page(submission_params[:page])
+    .per(submission_params[:per_page])
   end
 
   def show
@@ -35,7 +37,7 @@ class Public::SubmissionsController < ApplicationController
   private
 
   def submission_params
-    params.permit(:name, :email, :mobile_phone, :resume, :job_id)
+    params.permit(:name, :email, :mobile_phone, :resume, :job_id, :page, :per_page)
   end
 
   def set_submission

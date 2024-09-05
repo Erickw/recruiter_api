@@ -13,3 +13,8 @@ Rails.application.routes.draw do
     resources :jobs, only: [:index, :show]
   end
 end
+
+# Não ficou muito claro se o CRUD de submission era pertecente
+# a recruiter, e somente a action de create pública
+# ou se todas actions eram públicas, na dúvida, deixei
+# todas actions públicas

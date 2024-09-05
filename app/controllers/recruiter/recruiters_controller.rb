@@ -3,6 +3,8 @@ class Recruiter::RecruitersController < ApplicationController
 
   def index
     @recruiters = Recruiter.all
+    .page(recruiter_params[:page])
+    .per(recruiter_params[:per_page])
   end
 
   def show
@@ -24,7 +26,7 @@ class Recruiter::RecruitersController < ApplicationController
   private
 
   def recruiter_params
-    params.permit(:name, :email, :password)
+    params.permit(:name, :email, :password, :page, :per_page)
   end
 
   def set_recruiter

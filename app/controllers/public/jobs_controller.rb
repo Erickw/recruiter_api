@@ -4,6 +4,8 @@ class Public::JobsController < ApplicationController
 
   def index
     @jobs = Job.with_status_open.search(filter_params[:query])
+    .page(filter_params[:page])
+    .per(filter_params[:per_page])
   end
 
   def show
@@ -12,7 +14,7 @@ class Public::JobsController < ApplicationController
   private
 
   def filter_params
-    params.permit(:query)
+    params.permit(:query, :page, :per_page)
   end
 
   def set_job
