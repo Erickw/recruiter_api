@@ -1,5 +1,5 @@
 class Public::SubmissionsController < ApplicationController
-  skip_before_action :authorize_request, only: [:index, :show]
+  skip_before_action :authorize_request, only: [:index, :show, :create]
   before_action :set_submission, only: [:show, :update, :destroy]
 
   def index
