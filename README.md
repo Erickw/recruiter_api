@@ -314,9 +314,6 @@ curl -X GET http://localhost:3000/public/jobs/1
 
 - **No caso do `index`**, `query` é um parâmetro opcional que pode ser usado para filtrar jobs com base em uma busca textual, enquanto `page` e `per_page` são usados para paginação em todas requisições da aplicação.
 
-
-Aqui estão exemplos de requisições `cURL` para as ações do `Public::SubmissionsController`, que incluem `index`, `show`, `create`, `update`, e `destroy`.
-
 ## Exemplos de requisições **públicas** da API de Submissões a uma vaga (job)
 
 ### 1. **Listar Submissões**
