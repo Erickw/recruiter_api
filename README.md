@@ -47,7 +47,7 @@ de uma aplicação por email pra cada vaga.
 
 4. Configure as variáveis de ambiente:
 
- Crie um arquivo `.env` na raiz do projeto e defina as variáveis abaixo, para evitar inconsistências,
+ Crie um arquivo `.env` e copie a base do arquivo `.env.sample` na raiz do projeto e defina as variáveis abaixo, para evitar inconsistências,
  também é recomendado atualizar os arquivos `.env.test.local` e `.env.development.local` com seus valores.
 
  ```env
