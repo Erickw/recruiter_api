@@ -3,8 +3,7 @@ class Job < ApplicationRecord
   has_many :submissions
 
   validates :title, presence: true, uniqueness: true
-  validates :description, presence: true
-  validates :recruiter_id, presence: true
+  validates :description, :recruiter_id, presence: true
 
   scope :search, -> (query) {
     return all if query.blank?

@@ -7,7 +7,7 @@ RSpec.describe 'Authentication', type: :request do
 
   describe 'POST /signup' do
     let(:valid_attributes) do
-      { recruiter: { name: 'Jubileia', email: 'test@example.com', password: 'password123', password_confirmation: 'password123' } }
+      { recruiter: { name: 'Jubileia', email: 'test@example.com', password: 'password123' } }
     end
 
     context 'when the request is valid' do
