@@ -90,7 +90,7 @@ bundle exec rails s
 curl -X POST http://localhost:3000/signup -H "Content-Type: application/json" -d '{"recruiter":{
  "name": "John Doe",
  "email": "john@example.com",
- "password": "password",
+ "password": "password"
 }}'
 ```
 
