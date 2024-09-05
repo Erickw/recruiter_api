@@ -1,5 +1,5 @@
 class Public::SubmissionsController < ApplicationController
-  skip_before_action :authorize_request, only: [:index, :show, :create]
+  skip_before_action :authorize_request
   before_action :set_submission, only: [:show, :update, :destroy]
 
   def index
@@ -22,7 +22,7 @@ class Public::SubmissionsController < ApplicationController
   end
 
   def update
-    if @submission.update(job_params_params)
+    if @submission.update(submission_params)
       render :update, status: :ok
     else
       render json: @submission.errors, status: :unprocessable_entity
